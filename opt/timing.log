@@ -1,0 +1,90 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : CONV
+Version: T-2022.03
+Date   : Sat Apr  8 23:01:38 2023
+****************************************
+
+Operating Conditions: slow   Library: slow
+Wire Load Model Mode: top
+
+  Startpoint: mul_kernel_1_reg[9]
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: mul_result_1_reg[39]
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  CONV               tsmc13_wl10           slow
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk (rise edge)                                   0.00       0.00
+  clock network delay (ideal)                             0.50       0.50
+  mul_kernel_1_reg[9]/CK (DFFRX2)                         0.00       0.50 r
+  mul_kernel_1_reg[9]/Q (DFFRX2)                          0.69       1.19 f
+  mult_537_S2/b[9] (CONV_DW_mult_uns_4)                   0.00       1.19 f
+  mult_537_S2/U1399/Y (NOR2X2)                            0.39       1.57 r
+  mult_537_S2/U1564/Y (NOR2X4)                            0.17       1.74 f
+  mult_537_S2/U1503/Y (NAND2X1)                           0.37       2.11 r
+  mult_537_S2/U1904/Y (CLKINVX1)                          0.37       2.49 f
+  mult_537_S2/U1775/Y (NAND2XL)                           0.32       2.81 r
+  mult_537_S2/U1642/Y (OR2X1)                             0.28       3.09 r
+  mult_537_S2/U1671/Y (NAND2X2)                           0.13       3.21 f
+  mult_537_S2/U1822/Y (XOR2X4)                            0.22       3.43 f
+  mult_537_S2/U1957/Y (OAI21XL)                           0.53       3.96 r
+  mult_537_S2/U1388/Y (XOR2X2)                            0.32       4.28 r
+  mult_537_S2/U2283/CO (CMPR42X1)                         0.87       5.15 f
+  mult_537_S2/U1540/CO (CMPR42X1)                         0.69       5.84 f
+  mult_537_S2/U1617/Y (NOR2X1)                            0.41       6.25 r
+  mult_537_S2/U2174/Y (CLKINVX1)                          0.31       6.56 f
+  mult_537_S2/U2139/Y (CLKINVX1)                          0.24       6.80 r
+  mult_537_S2/U2138/Y (OAI21XL)                           0.23       7.03 f
+  mult_537_S2/U2136/Y (AOI21X1)                           0.29       7.31 r
+  mult_537_S2/U2140/Y (XOR2X1)                            0.27       7.59 f
+  mult_537_S2/product[22] (CONV_DW_mult_uns_4)            0.00       7.59 f
+  U1284/Y (CLKINVX1)                                      0.20       7.79 r
+  add_0_root_add_537_S2_ni/A[22] (CONV_DW01_inc_11)       0.00       7.79 r
+  add_0_root_add_537_S2_ni/U286/Y (NAND2X1)               0.19       7.98 f
+  add_0_root_add_537_S2_ni/U239/Y (NOR2X4)                0.14       8.12 r
+  add_0_root_add_537_S2_ni/U193/Y (NAND2X4)               0.11       8.23 f
+  add_0_root_add_537_S2_ni/U174/Y (NOR2X4)                0.17       8.40 r
+  add_0_root_add_537_S2_ni/U198/Y (NAND2X8)               0.16       8.56 f
+  add_0_root_add_537_S2_ni/U208/Y (CLKINVX20)             0.05       8.60 r
+  add_0_root_add_537_S2_ni/U207/Y (NAND2X8)               0.07       8.67 f
+  add_0_root_add_537_S2_ni/U206/Y (NOR2X8)                0.11       8.78 r
+  add_0_root_add_537_S2_ni/U205/Y (NAND2X8)               0.10       8.87 f
+  add_0_root_add_537_S2_ni/U213/Y (OR2X8)                 0.21       9.08 f
+  add_0_root_add_537_S2_ni/U211/Y (CLKINVX20)             0.04       9.12 r
+  add_0_root_add_537_S2_ni/U210/Y (NAND2X8)               0.06       9.18 f
+  add_0_root_add_537_S2_ni/U214/Y (NOR2X6)                0.12       9.31 r
+  add_0_root_add_537_S2_ni/U200/Y (NAND2X6)               0.11       9.42 f
+  add_0_root_add_537_S2_ni/U204/Y (NOR2X2)                0.22       9.64 r
+  add_0_root_add_537_S2_ni/U218/Y (NAND2X1)               0.20       9.83 f
+  add_0_root_add_537_S2_ni/U197/Y (XOR2X4)                0.16       9.99 r
+  add_0_root_add_537_S2_ni/SUM[39] (CONV_DW01_inc_11)     0.00       9.99 r
+  U1394/Y (AOI22X4)                                       0.10      10.10 f
+  U1397/Y (OAI2BB1X2)                                     0.14      10.23 r
+  mul_result_1_reg[39]/D (DFFRX2)                         0.00      10.23 r
+  data arrival time                                                 10.23
+
+  clock clk (rise edge)                                  10.00      10.00
+  clock network delay (ideal)                             0.50      10.50
+  clock uncertainty                                      -0.10      10.40
+  mul_result_1_reg[39]/CK (DFFRX2)                        0.00      10.40 r
+  library setup time                                     -0.16      10.24
+  data required time                                                10.24
+  --------------------------------------------------------------------------
+  data required time                                                10.24
+  data arrival time                                                -10.23
+  --------------------------------------------------------------------------
+  slack (MET)                                                        0.00
+
+
+1
